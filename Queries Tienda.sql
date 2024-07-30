@@ -35,7 +35,6 @@ SELECT fabricante.codigo, fabricante.nombre FROM `producto` JOIN `fabricante` ON
 SELECT fabricante.nombre, producto.nombre FROM `producto` RIGHT JOIN `fabricante` ON producto.codigo_fabricante = fabricante.codigo;
 SELECT fabricante.nombre FROM `producto` RIGHT JOIN `fabricante` ON producto.codigo_fabricante = fabricante.codigo WHERE producto.nombre IS NULL;
 SELECT producto.nombre FROM `producto` LEFT JOIN `fabricante` ON producto.codigo_fabricante = fabricante.codigo WHERE fabricante.nombre = 'Lenovo';
-SELECT * FROM `producto` LEFT JOIN `fabricante` ON producto.codigo_fabricante = fabricante.codigo WHERE producto.precio = 559;
+
 SELECT producto.nombre FROM `producto` JOIN `fabricante` ON producto.codigo_fabricante = fabricante.codigo WHERE fabricante.nombre = 'Lenovo' ORDER BY producto.precio DESC LIMIT 1;
 SELECT producto.nombre FROM `producto` JOIN `fabricante` ON producto.codigo_fabricante = fabricante.codigo WHERE fabricante.nombre = 'Hewlett-Packard' ORDER BY producto.precio ASC LIMIT 1;
-SELECT producto.nombre FROM `producto` LEFT JOIN `fabricante` ON producto.codigo_fabricante = fabricante.codigo WHERE producto.precio >= 559;

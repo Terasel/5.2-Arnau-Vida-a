@@ -19,3 +19,4 @@ SELECT COUNT(id) AS 'Nombre total alumnes' FROM `persona` WHERE tipo = 'alumno' 
 SELECT de.nombre AS 'Nom departament', COUNT(de.id) AS 'Nombre professors' FROM `profesor` pr JOIN `departamento` de ON pr.id_departamento = de.id GROUP BY de.nombre ORDER BY COUNT(de.id) DESC;
 SELECT de.nombre AS 'Nom departament', COUNT(pr.id_profesor) AS 'Nombre professors' FROM `profesor` pr RIGHT JOIN `departamento` de ON pr.id_departamento = de.id GROUP BY de.id;
 SELECT gr.nombre AS 'Nom grau', COUNT(asi.nombre) AS 'Nombre assignatures' FROM `grado` gr LEFT JOIN `asignatura` asi ON gr.id = asi.id_grado GROUP BY gr.id ORDER BY COUNT(asi.nombre) DESC;
+SELECT gr.nombre AS 'Nom grau', COUNT(asi.nombre) AS 'Nombre assignatures' FROM `grado` gr LEFT JOIN `asignatura` asi ON gr.id = asi.id_grado GROUP BY gr.id HAVING COUNT(asi.nombre) > 40 ORDER BY COUNT(asi.nombre) DESC;
